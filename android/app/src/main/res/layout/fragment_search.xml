@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="vertical">
+
+    <!-- Search Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#1E1E1E">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/search_input_bg"
+            android:hint="Search for songs, artists, albums..."
+            android:textColorHint="#808080"
+            android:textColor="#FFFFFF"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="12dp" />
+
+        <TextView
+            android:id="@+id/tvManualHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Or download non-Spotify content:"
+            android:textColor="#808080"
+            android:textSize="12sp"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnManualDownload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Download from YouTube"
+            android:backgroundTint="#1DB954"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:visibility="gone" />
+
+    <!-- No Results Message -->
+    <TextView
+        android:id="@+id/tvNoResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No results found"
+        android:textColor="#808080"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="48dp"
+        android:visibility="gone" />
+
+    <!-- Search Results -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+</LinearLayout>
+
+    <!-- item_search_result.xml -->
+
+    <!-- badge_song.xml (drawable) -->
+
+    <!-- badge_album.xml (drawable) -->
+
+
+    <!-- badge_artist.xml (drawable) -->

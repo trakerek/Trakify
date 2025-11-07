@@ -1,0 +1,77 @@
+// app/build.gradle
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.chaquo.python'
+}
+
+android {
+    namespace "com.example.trakify"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.trakify"
+        minSdk 29
+        targetSdk 35
+        versionCode 1
+        versionName "1.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+        python {
+            // Ścieżka do twojego Pythona na Windowsie:
+            buildPython "C:/Python311/python.exe"
+
+            pip {
+                install "requests"
+                install "dotenv"
+                install "aiohttp"
+                install "yt-dlp"
+                install "mutagen"         // opcjonalne: tagi/metadane audio
+                install "websockets"
+//                install "pytubefix"
+//                install "pytube"
+//                install "yt-dlp>=2024.12.01"
+                //sys , os , json , subprocess
+            }
+        }
+        sourceSets {
+            main {
+                python.srcDirs = ['src/main/python']
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+    ndkVersion '27.0.12077973'
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+    implementation "androidx.core:core-ktx:1.10.1"            // lub Twoja wersja
+    implementation "androidx.media:media:1.7.1"
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+//    implementation 'com.chaquo.python:gradle:16.1.0'
+}
