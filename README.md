@@ -25,8 +25,8 @@
    compileSdk 35
    android 10+
 2. Uruchom plik spotify_api.py (jeśli go nie widac zmien na pasku wyszukiwanie plików po Projekt a nie Android)
+   powinien byc w ~Ścieżka do projektu~\Trakify\android\app\src\main\python
 3. Dodaj swoje klucze api z https://developer.spotify.com/documentation/web-api z dashboard)
-4. Upewnij się, że masz skonfigurowane Chaquopy jeśli korzystasz z modułu `main.play_song`.
 5. Zbuduj i uruchom na urządzeniu z Androidem.
 
 
